@@ -15,7 +15,7 @@ public class Translator {
     // Você deve mudar o recheio do construtor,
     // de acordo com os requisitos do projeto.
     public Translator() {
-        Node start = new Node("start");
+        Node start = new Node('S');
         Node noe = new Node('e');
         Node not = new Node('t');
 
@@ -45,9 +45,9 @@ public class Translator {
         Node noy = new Node('y');
         Node noz = new Node('z');
         Node noq = new Node('q');
-        Node noVazio1 = new Node(null);
-        Node noVazio2 = new Node(null);
-        Node noVazio3 = new Node(null);
+        Node noVazio1 = new Node('-');
+        Node noVazio2 = new Node('-');
+        Node noVazio3 = new Node('-');
 
         Node no0 = new Node('0');
         Node no1 = new Node('1');
@@ -123,7 +123,7 @@ public class Translator {
         this.map.put('h', noh);
         this.map.put('v', nov);
         this.map.put('f', nof);
-        this.map.put('Vazio1', noVazio1);
+        this.map.put('-', noVazio1);
         this.map.put('l', nol);
         this.map.put('p', nop);
         this.map.put('j', noj);
@@ -133,14 +133,14 @@ public class Translator {
         this.map.put('y', noy);
         this.map.put('z', noz);
         this.map.put('q', noq);
-        this.map.put('Vazio2', noVazio2);
-        this.map.put('Vazio3', noVazio3);
+        this.map.put('-', noVazio2);
+        this.map.put('-', noVazio3);
     }
 
 
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
-    public char morseToChar(String code) {return ' '}
+    public char morseToChar(String code) {return ' ';}
 
 
     // Você deve mudar o recheio deste método,
