@@ -7,6 +7,7 @@ package br.pro.hashi.ensino.desagil.projeto1;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class Translator {
     private Node root;
@@ -15,7 +16,9 @@ public class Translator {
     // Você deve mudar o recheio do construtor,
     // de acordo com os requisitos do projeto.
     public Translator() {
-        Node start = new Node('S');
+
+        map = new HashMap<>();
+        root = new Node('S');
         Node noe = new Node('e');
         Node not = new Node('t');
 
@@ -45,9 +48,9 @@ public class Translator {
         Node noy = new Node('y');
         Node noz = new Node('z');
         Node noq = new Node('q');
-        Node noVazio1 = new Node('-');
-        Node noVazio2 = new Node('-');
-        Node noVazio3 = new Node('-');
+        Node noVazio1 = new Node('A');
+        Node noVazio2 = new Node('B');
+        Node noVazio3 = new Node('C');
 
         Node no0 = new Node('0');
         Node no1 = new Node('1');
@@ -60,8 +63,8 @@ public class Translator {
         Node no8 = new Node('8');
         Node no9 = new Node('9');
 
-        start.setLeft(noe);
-        start.setRight(not);
+        root.setLeft(noe);
+        root.setRight(not);
 
         noe.setLeft(noi);
         noe.setRight(noa);
@@ -103,6 +106,7 @@ public class Translator {
         noVazio3.setLeft(no9);
         noVazio3.setRight(no0);
 
+        this.map.put('S', root);
         this.map.put('e', noe);
         this.map.put('t', not);
 
@@ -123,7 +127,7 @@ public class Translator {
         this.map.put('h', noh);
         this.map.put('v', nov);
         this.map.put('f', nof);
-        this.map.put('-', noVazio1);
+        this.map.put('A', noVazio1);
         this.map.put('l', nol);
         this.map.put('p', nop);
         this.map.put('j', noj);
@@ -133,15 +137,42 @@ public class Translator {
         this.map.put('y', noy);
         this.map.put('z', noz);
         this.map.put('q', noq);
-        this.map.put('-', noVazio2);
-        this.map.put('-', noVazio3);
+        this.map.put('B', noVazio2);
+        this.map.put('C', noVazio3);
     }
 
 
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
-    public char morseToChar(String code) {return ' ';}
+    public char morseToChar(String code) {
 
+        Queue<Node> queue = new LinkedList<>();
+        Node no_final = null;
+        char letra = ' ';
+
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            for (int i = 0; i < (code.length()); i++) {
+
+                Node node = queue.element();
+                System.out.println(node);
+
+                Node left = node.getLeft();
+                Node right = node.getRight();
+
+                if (left != null && code.charAt(i) == '.') {
+                    queue.add(left);
+                } else if (right != null && code.charAt(i) == '-') {
+                    queue.add(right);
+                }
+
+                no_final = queue.remove();
+                letra = no_final.getValue();
+            }
+        }
+        System.out.println(letra);
+        return letra;
+    }
 
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
