@@ -3,9 +3,11 @@ package br.pro.hashi.ensino.desagil.projeto1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +23,49 @@ public class MainActivity extends AppCompatActivity {
         EditText editTranslateExample = findViewById(R.id.edit_translate_example);
 
         Button buttonExample = findViewById(R.id.button_example);
+
+        buttonExample.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String morse;
+                String frase;
+                String string;
+                Translator tradutor = new Translator();
+                string = "";
+                frase = "";
+                String erro = "ERRO";
+                morse = editExample.getText().toString();
+
+                for (int i = 0; i < (morse.length()); i++){
+                    try {
+                        if (morse.charAt(i) != ' ') {
+                            string = string + morse.charAt(i);
+                            if (i == morse.length() - 1) {
+                                frase += tradutor.morseToChar(string);
+                            }
+                        } else {
+                            frase += tradutor.morseToChar(string);
+                            string = "";
+                        }
+                        if (morse.charAt(i) == '/') {
+                            frase += " ";
+                            string = "";
+                        }
+
+                    }catch (Exception e){
+                        Toast.makeText(MainActivity.this, "ERRO", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+
+                editTranslateExample.setText(frase.toString());
+
+
+
+            }
+        });
+
+
 
     }
 }
