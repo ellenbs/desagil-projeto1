@@ -87,6 +87,7 @@ public class Translator {
         nor.setLeft(nol);
         now.setLeft(nop);
         now.setRight(noj);
+        noj.setRight(no1);
         nod.setLeft(nob);
         nod.setRight(nox);
         nok.setLeft(noc);
@@ -145,34 +146,22 @@ public class Translator {
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     public char morseToChar(String code) {
-
-        Queue<Node> queue = new LinkedList<>();
-        Node no_final = null;
+        Node no_final = root;
         char letra = ' ';
 
-        queue.add(root);
-        while (!queue.isEmpty()) {
-            for (int i = 0; i < (code.length()); i++) {
+        for (int i = 0; i < (code.length()); i++) {
 
-                Node node = queue.element();
-                System.out.println(node);
+            if (code.charAt(i) == '.') {
+                no_final = no_final.getLeft();
 
-                Node left = node.getLeft();
-                Node right = node.getRight();
-
-                if (left != null && code.charAt(i) == '.') {
-                    queue.add(left);
-                } else if (right != null && code.charAt(i) == '-') {
-                    queue.add(right);
-                }
-
-                no_final = queue.remove();
-                letra = no_final.getValue();
+            } else if (code.charAt(i) == '-') {
+                no_final = no_final.getRight();
             }
+            letra = no_final.getValue();
         }
-        System.out.println(letra);
         return letra;
     }
+
 
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.

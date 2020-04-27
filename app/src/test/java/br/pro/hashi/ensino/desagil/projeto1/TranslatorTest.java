@@ -19,9 +19,7 @@ public class TranslatorTest {
     }
 
     @Test
-    public void toA() {
-        Assert.assertEquals('a', translator.morseToChar(".-"));
-    }
+    public void toA() { Assert.assertEquals('a', translator.morseToChar(".-")); }
 
     @Test
     public void toB() {
@@ -149,9 +147,7 @@ public class TranslatorTest {
     }
 
     @Test
-    public void to0() {
-        Assert.assertEquals('0', translator.morseToChar("-----"));
-    }
+    public void to0() { Assert.assertEquals('0', translator.morseToChar("-----")); }
 
     @Test
     public void to1() {
