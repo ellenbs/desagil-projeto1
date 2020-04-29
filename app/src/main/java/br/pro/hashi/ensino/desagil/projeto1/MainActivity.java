@@ -33,8 +33,9 @@ public class MainActivity extends AppCompatActivity {
                 Translator tradutor = new Translator();
                 string = "";
                 frase = "";
-                String erro = "ERRO";
+
                 morse = editExample.getText().toString();
+
 
                 for (int i = 0; i < (morse.length()); i++){
                     try {
@@ -50,18 +51,18 @@ public class MainActivity extends AppCompatActivity {
                         if (morse.charAt(i) == '/') {
                             frase += " ";
                             string = "";
+                        }else if (morse.charAt(i) != ' ' && morse.charAt(i) != '/' && morse.charAt(i) != '.' && morse.charAt(i) != '-' ) {
+                            frase += "!!ERRO!!";
+                            break;
                         }
 
                     }catch (Exception e){
-                        Toast.makeText(MainActivity.this, "ERRO", Toast.LENGTH_SHORT).show();
-
+                        frase += "!!ERRO!!";
+                        break;
                     }
                 }
 
                 editTranslateExample.setText(frase.toString());
-
-
-
             }
         });
 

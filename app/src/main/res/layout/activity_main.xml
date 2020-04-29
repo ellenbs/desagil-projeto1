@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15sp"
-        android:text="Texto taduzido: " />
+        android:text="Texto traduzido: " />
 
     <EditText android:id="@+id/edit_translate_example"
         android:layout_width="match_parent"
