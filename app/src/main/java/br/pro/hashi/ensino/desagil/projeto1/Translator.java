@@ -5,6 +5,7 @@
 
 package br.pro.hashi.ensino.desagil.projeto1;
 
+import java.io.LineNumberReader;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -107,6 +108,46 @@ public class Translator {
         noVazio3.setLeft(no9);
         noVazio3.setRight(no0);
 
+        noe.setParent(root);
+        not.setParent(root);
+        noa.setParent(noe);
+        noi.setParent(noe);
+        nom.setParent(not);
+        non.setParent(not);
+        nou.setParent(noi);
+        nos.setParent(noi);
+        nor.setParent(noa);
+        now.setParent(noa);
+        nod.setParent(non);
+        nok.setParent(non);
+        nog.setParent(nom);
+        noo.setParent(nom);
+        noh.setParent(nos);
+        nov.setParent(nos);
+        nof.setParent(nou);
+        noVazio1.setParent(nou);
+        nol.setParent(nor);
+        nop.setParent(now);
+        noj.setParent(now);
+        nob.setParent(nod);
+        nox.setParent(nod);
+        noc.setParent(nok);
+        noy.setParent(nok);
+        noz.setParent(nog);
+        noq.setParent(nog);
+        noVazio2.setParent(noo);
+        noVazio3.setParent(noo);
+        no5.setParent(noh);
+        no4.setParent(noh);
+        no3.setParent(nov);
+        no2.setParent(noVazio1);
+        no1.setParent(noj);
+        no6.setParent(nob);
+        no7.setParent(noz);
+        no8.setParent(noVazio2);
+        no9.setParent(noVazio3);
+        no0.setParent(noVazio3);
+
         this.map.put('S', root);
         this.map.put('e', noe);
         this.map.put('t', not);
@@ -128,8 +169,9 @@ public class Translator {
         this.map.put('h', noh);
         this.map.put('v', nov);
         this.map.put('f', nof);
-        this.map.put('A', noVazio1);
         this.map.put('l', nol);
+        this.map.put('A', noVazio1);
+
         this.map.put('p', nop);
         this.map.put('j', noj);
         this.map.put('b', nob);
@@ -140,6 +182,19 @@ public class Translator {
         this.map.put('q', noq);
         this.map.put('B', noVazio2);
         this.map.put('C', noVazio3);
+
+        this.map.put('1', no1);
+        this.map.put('2', no2);
+        this.map.put('3', no3);
+        this.map.put('4', no4);
+        this.map.put('5', no5);
+        this.map.put('6', no6);
+        this.map.put('7', no7);
+        this.map.put('8', no8);
+        this.map.put('9', no9);
+        this.map.put('0', no0);
+
+
     }
 
 
@@ -166,7 +221,24 @@ public class Translator {
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     private String charToMorse(Node node) {
-        return " ";
+        String resposta = "";
+        String invertida = "";
+
+        while(node != root){
+            Node noAtual = node;
+            node = node.getParent();
+            System.out.println(node);
+            if (node.getLeft() == noAtual){
+                resposta += ".";
+            }else{resposta += "-";}
+        }
+
+        char[] try1 = resposta.toCharArray();
+        for (int i = try1.length-1; i>=0; i--){
+            invertida += try1[i];
+        }
+
+        return invertida;
     }
 
 
@@ -179,6 +251,30 @@ public class Translator {
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     public LinkedList<String> getCodes() {
-        return new LinkedList<>();
+        Queue<Node> queue = new LinkedList<>();
+        LinkedList<String>morses = new LinkedList<>();
+
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            Node node = queue.element();
+
+            if (node.getValue() != 'S' && node.getValue() != 'A' && node.getValue() != 'B' && node.getValue() != 'C'){
+            morses.add(charToMorse(node));}
+
+            Node left = node.getLeft();
+            Node right = node.getRight();
+
+
+            if (left != null) {
+                queue.add(left);
+            }
+            if (right != null) {
+                queue.add(right);
+            }
+            queue.remove();
+
+        }
+        return morses;
     }
 }
