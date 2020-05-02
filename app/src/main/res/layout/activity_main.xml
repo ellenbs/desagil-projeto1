@@ -7,33 +7,15 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView android:id="@+id/text_example"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:text="Digite abaixo o texto em morse: " />
-
-    <EditText android:id="@+id/edit_example"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:hint="Texto em morse" />
-
-    <Button android:id="@+id/button_example"
+    <Button android:id="@+id/button_telatraduz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="Traduzir" />
+        android:text="Tradutor" />
 
-    <TextView android:id="@+id/text_translate_example"
+    <Button android:id="@+id/button_dicmorse_char"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:text="Texto traduzido: " />
-
-    <EditText android:id="@+id/edit_translate_example"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:hint="Texto em morse" />
+        android:layout_margin="5dp"
+        android:text="Dicionario Morse-Alfabeto" />
 </LinearLayout>

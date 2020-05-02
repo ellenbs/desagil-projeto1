@@ -2,6 +2,7 @@ package br.pro.hashi.ensino.desagil.projeto1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,53 +17,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView textExample = findViewById(R.id.text_example);
-        TextView textTranslateExample = findViewById(R.id.text_translate_example);
 
-        EditText editExample = findViewById(R.id.edit_example);
-        EditText editTranslateExample = findViewById(R.id.edit_translate_example);
 
-        Button buttonExample = findViewById(R.id.button_example);
 
-        buttonExample.setOnClickListener(new View.OnClickListener() {
+
+        Button buttonTelaTraduz = findViewById(R.id.button_telatraduz);
+        Button buttonDicMorse = findViewById(R.id.button_dicmorse_char);
+
+        Intent traduz = new Intent(this, TelaInicial.class);
+
+        Intent dicMorse = new Intent(this, DicionarioMorse.class);
+
+        buttonTelaTraduz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String morse;
-                String frase;
-                String string;
-                Translator tradutor = new Translator();
-                string = "";
-                frase = "";
+                startActivity(traduz);
+            }
+        });
 
-                morse = editExample.getText().toString();
+        buttonDicMorse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-
-                for (int i = 0; i < (morse.length()); i++){
-                    try {
-                        if (morse.charAt(i) != ' ') {
-                            string = string + morse.charAt(i);
-                            if (i == morse.length() - 1) {
-                                frase += tradutor.morseToChar(string);
-                            }
-                        } else {
-                            frase += tradutor.morseToChar(string);
-                            string = "";
-                        }
-                        if (morse.charAt(i) == '/') {
-                            frase += " ";
-                            string = "";
-                        }else if (morse.charAt(i) != ' ' && morse.charAt(i) != '/' && morse.charAt(i) != '.' && morse.charAt(i) != '-' ) {
-                            frase += "!!ERRO!!";
-                            break;
-                        }
-
-                    }catch (Exception e){
-                        frase += "!!ERRO!!";
-                        break;
-                    }
-                }
-
-                editTranslateExample.setText(frase.toString());
             }
         });
 
