@@ -5,19 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".TelaInicial">
+    tools:context=".SMS">
 
-    <TextView android:id="@+id/digite"
+    <TextView android:id="@+id/mensagem_morse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15sp"
-        android:text="Digite abaixo o texto em morse: " />
+        android:text="Digite abaixo a mensagem em morse: " />
 
-    <TextView android:id="@+id/texto_morse"
+    <TextView android:id="@+id/mensagem_em_morse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:hint="Texto em morse" />
+
+    <TextView android:id="@+id/telefone_morse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="Digite abaixo o telefone em morse: " />
+
+    <TextView android:id="@+id/telefone_em_morse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:hint="Telefone em morse" />
 
     <Button android:id="@+id/button_morse"
         android:layout_width="match_parent"
@@ -49,16 +61,28 @@
         android:layout_margin="5dp"
         android:text="Traduzir" />
 
-    <TextView android:id="@+id/texto_traduzido_abaixo"
+    <TextView android:id="@+id/mensagem_traduzida"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15sp"
         android:text="Texto traduzido: " />
 
-    <TextView android:id="@+id/texto_traduzido"
+    <TextView android:id="@+id/mensagem_que_foi_traduzida"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:hint="Texto em alfabetico romano" />
+        android:hint="Texto em morse" />
+
+    <TextView android:id="@+id/telefone_traduzido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="Telefone traduzido: " />
+
+    <TextView android:id="@+id/telefone_que_foi_traduzido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:hint="Telefone em morse" />
 
 </LinearLayout>

@@ -7,17 +7,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class TelaInicial extends AppCompatActivity {
+public class SMS extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_inicial);
+        setContentView(R.layout.activity_sms);
 
-        TextView textoMorse = findViewById(R.id.texto_morse);
-        TextView textoTraduzido = findViewById(R.id.texto_traduzido);
+        TextView mensagemMorse = findViewById(R.id.mensagem_em_morse);
+        TextView telefoneMorse = findViewById(R.id.telefone_em_morse);
+
+        TextView telefoneTraduzido = findViewById(R.id.telefone_que_foi_traduzido);
+        TextView mensagemTraduzida = findViewById(R.id.mensagem_que_foi_traduzida);
 
         Button buttonTraduzir = findViewById(R.id.button_traduzir);
 
@@ -29,14 +31,14 @@ public class TelaInicial extends AppCompatActivity {
         buttonMorse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textoMorse.setText(textoMorse.getText() + ".");
+                mensagemMorse.setText(mensagemMorse.getText() + ".");
             }
         });
 
         buttonMorse.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view){
-                textoMorse.setText(textoMorse.getText() + "-");
+                mensagemMorse.setText(mensagemMorse.getText() + "-");
                 return true;
             }
         });
@@ -44,7 +46,7 @@ public class TelaInicial extends AppCompatActivity {
         buttonEspaco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textoMorse.setText(textoMorse.getText() + " ");
+                mensagemMorse.setText(mensagemMorse.getText() + " ");
 
             }
         });
@@ -52,7 +54,7 @@ public class TelaInicial extends AppCompatActivity {
         buttonBarra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textoMorse.setText(textoMorse.getText() + "/");
+                mensagemMorse.setText(mensagemMorse.getText() + "/");
             }
         });
 
@@ -60,16 +62,16 @@ public class TelaInicial extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String str;
-                str = textoMorse.getText().toString();
+                str = mensagemMorse.getText().toString();
                 String result = null;
                 if ((str != null) && (str.length() > 0)) {
                     result = str.substring(0, str.length() - 1);
-                    textoMorse.setText(result.toString());
+                    mensagemMorse.setText(result.toString());
                 }
 
                 else {
                     result="";
-                    textoMorse.setText(result.toString());
+                    mensagemMorse.setText(result.toString());
                 }
 
             }
@@ -85,7 +87,7 @@ public class TelaInicial extends AppCompatActivity {
                 string = "";
                 frase = "";
 
-                morse = textoMorse.getText().toString();
+                morse = mensagemMorse.getText().toString();
 
                 for (int i = 0; i < (morse.length()); i++) {
                     try {
@@ -112,7 +114,7 @@ public class TelaInicial extends AppCompatActivity {
                     }
                 }
 
-                textoTraduzido.setText(frase.toString());
+                mensagemTraduzida.setText(frase.toString());
             }
         });
 
