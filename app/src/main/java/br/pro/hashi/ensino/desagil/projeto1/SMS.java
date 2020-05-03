@@ -3,12 +3,24 @@ package br.pro.hashi.ensino.desagil.projeto1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.telephony.PhoneNumberUtils;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SMS extends AppCompatActivity {
+
+    private void showToast(String text) {
+
+        // Constrói uma bolha de duração curta.
+        Toast toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
+
+        // Mostra essa bolha.
+        toast.show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +33,14 @@ public class SMS extends AppCompatActivity {
         TextView telefoneTraduzido = findViewById(R.id.telefone_que_foi_traduzido);
         TextView mensagemTraduzida = findViewById(R.id.mensagem_que_foi_traduzida);
 
-        Button buttonTraduzir = findViewById(R.id.button_traduzir);
-
         Button buttonMorse = findViewById(R.id.button_morse);
         Button buttonEspaco = findViewById(R.id.button_espaco);
         Button buttonBarra = findViewById(R.id.button_barra);
         Button buttonApaga = findViewById(R.id.button_apagar);
+
+        Button buttonTraduzir = findViewById(R.id.button_traduzir);
+
+        Button buttonEnviar = findViewById(R.id.button_enviar);
 
         buttonMorse.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,6 +130,34 @@ public class SMS extends AppCompatActivity {
 
                 mensagemTraduzida.setText(frase.toString());
             }
+        });
+
+        buttonEnviar.setOnClickListener((view) -> {
+            String message = mensagemTraduzida.getText().toString();
+
+            if (message.isEmpty()) {
+                showToast("Mensagem inválida!");
+                return;
+            }
+
+            String phone = telefoneTraduzido.getText().toString();
+
+            // Esta verificação do número de telefone é bem
+            // rígida, pois exige até mesmo o código do país.
+            if (!PhoneNumberUtils.isGlobalPhoneNumber(phone)) {
+                showToast("Número inválido!");
+                return;
+            }
+
+            // Enviar uma mensagem de SMS. Por simplicidade,
+            // não estou verificando se foi mesmo enviada,
+            // mas é possível fazer uma versão que verifica.
+            SmsManager manager = SmsManager.getDefault();
+            manager.sendTextMessage(phone, null, message, null, null);
+
+            // Limpar o campo para nenhum engraçadinho
+            // ficar apertando o botão várias vezes.
+            telefoneTraduzido.setText("");
         });
 
     }

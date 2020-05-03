@@ -85,4 +85,10 @@
         android:padding="10dp"
         android:hint="Telefone em morse" />
 
+    <Button android:id="@+id/button_enviar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Enviar" />
+
 </LinearLayout>
