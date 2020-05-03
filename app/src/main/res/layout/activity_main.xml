@@ -13,16 +13,18 @@
         android:layout_margin="5dp"
         android:text="Tradutor" />
 
+    <Button android:id="@+id/button_sms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Enviar SMS" />
+
     <Button android:id="@+id/button_dicmorse_char"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:text="Dicionario Morse-Alfabeto" />
 
-    <Button android:id="@+id/button_sms"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="Enviar SMS" />
+
 
 </LinearLayout>
