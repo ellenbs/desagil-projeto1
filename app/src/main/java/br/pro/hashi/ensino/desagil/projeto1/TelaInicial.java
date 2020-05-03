@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class TelaInicial extends AppCompatActivity {
 
@@ -17,11 +18,68 @@ public class TelaInicial extends AppCompatActivity {
 
         TextView textExample = findViewById(R.id.text_example);
         TextView textTranslateExample = findViewById(R.id.text_translate_example);
-
-        EditText editExample = findViewById(R.id.edit_example);
+        TextView editExample = findViewById(R.id.edit_example);
         EditText editTranslateExample = findViewById(R.id.edit_translate_example);
 
         Button buttonExample = findViewById(R.id.button_example);
+
+        Button buttonMorse = findViewById(R.id.button_morse);
+        Button buttonEspaco = findViewById(R.id.button_espaco);
+        Button buttonBarra = findViewById(R.id.button_barra);
+        Button buttonApaga = findViewById(R.id.button_apagar);
+
+        buttonMorse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editExample.setText(editExample.getText() + ".");
+            }
+        });
+
+        buttonMorse.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view){
+                editExample.setText(editExample.getText() + "-");
+                return true;
+            }
+        });
+
+
+
+        buttonEspaco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editExample.setText(editExample.getText() + " ");
+
+            }
+        });
+
+        buttonBarra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editExample.setText(editExample.getText() + "/");
+            }
+        });
+
+        buttonApaga.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String str;
+                str = editExample.getText().toString();
+                String result = null;
+                if ((str != null) && (str.length() > 0)) {
+                    result = str.substring(0, str.length() - 1);
+                    editExample.setText(result.toString());
+                }
+
+                else {
+                    result="";
+                    editExample.setText(result.toString());
+                }
+
+            }
+        });
+
+
 
         buttonExample.setOnClickListener(new View.OnClickListener() {
             @Override

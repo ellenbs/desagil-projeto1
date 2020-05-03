@@ -13,217 +13,182 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView android:id="@+id/Ponto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text=". > e" />
-
-        <TextView android:id="@+id/Traço"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="- > t" />
-
-        <TextView android:id="@+id/PontoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text=".. > i" />
-
-        <TextView android:id="@+id/PontoTraço"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text=".- > a" />
-
-        <TextView android:id="@+id/TraçoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="-. > n" />
-
-        <TextView android:id="@+id/TraçoTraço"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="-- > m" />
-
-        <TextView android:id="@+id/PontoPontoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="... > s" />
-
-        <TextView android:id="@+id/PontoPontoTraço"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > u" />
-
-        <TextView android:id="@+id/PontoTraçoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > r" />
-
-        <TextView android:id="@+id/PontoTraçoTraço"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > w" />
-
-        <TextView android:id="@+id/TraçoPontoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > d" />
-
-        <TextView android:id="@+id/TraçoPontoTraço"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > k" />
-
-        <TextView android:id="@+id/TraçoTraçoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > g" />
-
-        <TextView android:id="@+id/TraçoTraçoTraço"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > o" />
-
-        <TextView android:id="@+id/PontoPontoPontoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > h" />
-
-        <TextView android:id="@+id/PontoPontoPontoTraço"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > v" />
-
-        <TextView android:id="@+id/PontoPontoTraçoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > f" />
-
-        <TextView android:id="@+id/PontoTraçoPontoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > l" />
-
-        <TextView android:id="@+id/PontoTraçoTraçoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > p" />
-
-        <TextView android:id="@+id/PontoTraçoTraçoTraço"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > j" />
-
-        <TextView android:id="@+id/TraçoPontoPontoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > b" />
-
-        <TextView android:id="@+id/TraçoPontoPontoTraço"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > x" />
-
-        <TextView android:id="@+id/TraçoPontoTraçoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > c" />
-
-        <TextView android:id="@+id/TraçoPontoTraçoTraço"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > y" />
-
-        <TextView android:id="@+id/TraçoTraçoPontoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > z" />
-
-        <TextView android:id="@+id/TraçoTraçoPontoTraço"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > q" />
-
-        <TextView android:id="@+id/PontoPontoPontoPontoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > 5" />
-
-        <TextView android:id="@+id/PontoPontoPontoPontoTraço"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > 4" />
-
-        <TextView android:id="@+id/PontoPontoPontoTraçoTraço"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > 3" />
-
-        <TextView android:id="@+id/PontoPontoTraçoTraçoTraço"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > 2" />
-
-        <TextView android:id="@+id/PontoTraçoTraçoTraçoTraço"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > 1" />
-
-        <TextView android:id="@+id/TraçoPontoPontoPontoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > 6" />
-
-        <TextView android:id="@+id/TraçoTraçoPontoPontoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > 7" />
-
-        <TextView android:id="@+id/TraçoTraçoTraçoPontoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > 8" />
-
-        <TextView android:id="@+id/TraçoTraçoTraçoTraçoPonto"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="..- > 9" />
-
-        <TextView android:id="@+id/TraçoTraçoTraçoTraçoTraço"
+        <TextView android:id="@+id/sera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"

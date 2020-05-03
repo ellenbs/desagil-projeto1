@@ -13,11 +13,37 @@
         android:textSize="15sp"
         android:text="Digite abaixo o texto em morse: " />
 
-    <EditText android:id="@+id/edit_example"
+    <TextView android:id="@+id/edit_example"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:hint="Texto em morse" />
+
+    <Button android:id="@+id/button_morse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="curto/longo" />
+
+    <Button android:id="@+id/button_espaco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="espaço" />
+
+    <Button android:id="@+id/button_barra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="/" />
+
+    <Button android:id="@+id/button_apagar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="apagar" />
+
+
 
     <Button android:id="@+id/button_example"
         android:layout_width="match_parent"
