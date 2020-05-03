@@ -193,10 +193,7 @@ public class Translator {
         this.map.put('8', no8);
         this.map.put('9', no9);
         this.map.put('0', no0);
-
-
     }
-
 
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.

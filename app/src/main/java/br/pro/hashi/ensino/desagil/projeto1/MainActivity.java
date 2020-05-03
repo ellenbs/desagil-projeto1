@@ -17,10 +17,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
-
         Button buttonTelaTraduz = findViewById(R.id.button_telatraduz);
         Button buttonDicMorse = findViewById(R.id.button_dicmorse_char);
 
@@ -37,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonDicMorse.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) { startActivity(dicMorse);
 
             }
         });
