@@ -11,6 +11,15 @@ import android.widget.Toast;
 
 public class TelaInicial extends AppCompatActivity {
 
+    private void showToast(String text) {
+
+        // Constrói uma bolha de duração curta.
+        Toast toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
+
+        // Mostra essa bolha.
+        toast.show();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,12 +75,10 @@ public class TelaInicial extends AppCompatActivity {
                     result = str.substring(0, str.length() - 1);
                     textoMorse.setText(result.toString());
                 }
-
                 else {
                     result="";
                     textoMorse.setText(result.toString());
                 }
-
             }
         });
 
@@ -101,20 +108,14 @@ public class TelaInicial extends AppCompatActivity {
                         if (morse.charAt(i) == '/') {
                             frase += " ";
                             string = "";
-                        } else if (morse.charAt(i) != ' ' && morse.charAt(i) != '/' && morse.charAt(i) != '.' && morse.charAt(i) != '-') {
-                            frase += "!!ERRO!!";
-                            break;
                         }
-
                     } catch (Exception e) {
-                        frase += "!!ERRO!!";
-                        break;
+                        showToast("Ultimo Caractere Inexistente!");
+                        return;
                     }
                 }
-
                 textoTraduzido.setText(frase.toString());
             }
         });
-
     }
 }

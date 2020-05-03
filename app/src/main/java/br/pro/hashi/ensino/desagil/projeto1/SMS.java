@@ -117,14 +117,11 @@ public class SMS extends AppCompatActivity {
                         if (morse.charAt(i) == '/') {
                             frase += " ";
                             string = "";
-                        } else if (morse.charAt(i) != ' ' && morse.charAt(i) != '/' && morse.charAt(i) != '.' && morse.charAt(i) != '-') {
-                            frase += "!!ERRO!!";
-                            break;
                         }
 
                     } catch (Exception e) {
-                        frase += "!!ERRO!!";
-                        break;
+                        showToast("Ultimo Caractere Inexistente!");
+                        return;
                     }
                 }
 
