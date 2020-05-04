@@ -11,13 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15sp"
-        android:text="Digite abaixo a mensagem em morse: " />
+        android:text="Digite abaixo a mensagem em morse: "
+        />
 
     <TextView android:id="@+id/mensagem_em_morse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:hint="Texto em morse" />
+        android:hint="Texto em morse"
+        />
 
     <TextView android:id="@+id/telefone_morse"
         android:layout_width="match_parent"

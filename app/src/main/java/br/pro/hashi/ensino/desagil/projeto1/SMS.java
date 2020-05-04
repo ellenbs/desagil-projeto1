@@ -2,10 +2,14 @@ package br.pro.hashi.ensino.desagil.projeto1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.SmsManager;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -20,7 +24,7 @@ public class SMS extends AppCompatActivity {
 
         // Mostra essa bolha.
         toast.show();
-    }
+}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,7 @@ public class SMS extends AppCompatActivity {
 
         TextView mensagemMorse = findViewById(R.id.mensagem_em_morse);
         TextView telefoneMorse = findViewById(R.id.telefone_em_morse);
+
 
         TextView telefoneTraduzido = findViewById(R.id.telefone_que_foi_traduzido);
         TextView mensagemTraduzida = findViewById(R.id.mensagem_que_foi_traduzida);
@@ -42,54 +47,117 @@ public class SMS extends AppCompatActivity {
 
         Button buttonEnviar = findViewById(R.id.button_enviar);
 
-        buttonMorse.setOnClickListener(new View.OnClickListener() {
+        telefoneMorse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mensagemMorse.setText(mensagemMorse.getText() + ".");
+                buttonMorse.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        telefoneMorse.setText(telefoneMorse.getText() + ".");
+                    }
+                });
+
+                buttonMorse.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view){
+                        telefoneMorse.setText(telefoneMorse.getText() + "-");
+                        return true;
+                    }
+                });
+
+                buttonEspaco.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        telefoneMorse.setText(telefoneMorse.getText() + " ");
+
+                    }
+                });
+
+                buttonBarra.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        telefoneMorse.setText(telefoneMorse.getText() + "/");
+                    }
+                });
+
+                buttonApaga.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String str;
+                        str = telefoneMorse.getText().toString();
+                        String result = null;
+                        if ((str != null) && (str.length() > 0)) {
+                            result = str.substring(0, str.length() - 1);
+                            telefoneMorse.setText(result.toString());
+                        }
+
+                        else {
+                            result="";
+                            telefoneMorse.setText(result.toString());
+                        }
+
+                    }
+                });
+
             }
         });
 
-        buttonMorse.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view){
-                mensagemMorse.setText(mensagemMorse.getText() + "-");
-                return true;
-            }
-        });
-
-        buttonEspaco.setOnClickListener(new View.OnClickListener() {
+        mensagemMorse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mensagemMorse.setText(mensagemMorse.getText() + " ");
+                buttonMorse.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        mensagemMorse.setText(mensagemMorse.getText() + ".");
+                    }
+                });
+
+                buttonMorse.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view){
+                        mensagemMorse.setText(mensagemMorse.getText() + "-");
+                        return true;
+                    }
+                });
+
+                buttonEspaco.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        mensagemMorse.setText(mensagemMorse.getText() + " ");
+
+                    }
+                });
+
+                buttonBarra.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        mensagemMorse.setText(mensagemMorse.getText() + "/");
+                    }
+                });
+
+                buttonApaga.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String str;
+                        str = mensagemMorse.getText().toString();
+                        String result = null;
+                        if ((str != null) && (str.length() > 0)) {
+                            result = str.substring(0, str.length() - 1);
+                            mensagemMorse.setText(result.toString());
+                        }
+
+                        else {
+                            result="";
+                            mensagemMorse.setText(result.toString());
+                        }
+
+                    }
+                });
 
             }
         });
 
-        buttonBarra.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mensagemMorse.setText(mensagemMorse.getText() + "/");
-            }
-        });
 
-        buttonApaga.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String str;
-                str = mensagemMorse.getText().toString();
-                String result = null;
-                if ((str != null) && (str.length() > 0)) {
-                    result = str.substring(0, str.length() - 1);
-                    mensagemMorse.setText(result.toString());
-                }
-
-                else {
-                    result="";
-                    mensagemMorse.setText(result.toString());
-                }
-
-            }
-        });
 
         buttonTraduzir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,6 +194,40 @@ public class SMS extends AppCompatActivity {
                 }
 
                 mensagemTraduzida.setText(frase.toString());
+
+                String morse1;
+                String frase1;
+                String string1;
+                Translator tradutor1 = new Translator();
+                string1 = "";
+                frase1 = "";
+
+                morse1 = telefoneMorse.getText().toString();
+
+                for (int i = 0; i < (morse1.length()); i++) {
+                    try {
+                        if (morse1.charAt(i) != ' ') {
+                            string1 = string1 + morse1.charAt(i);
+                            if (i == morse1.length() - 1) {
+                                frase1 += tradutor1.morseToChar(string1);
+                            }
+                        } else {
+                            frase1 += tradutor1.morseToChar(string1);
+                            string1 = "";
+                        }
+                        if (morse1.charAt(i) == '/') {
+                            frase1 += " ";
+                            string1 = "";
+                        }
+
+                    } catch (Exception e) {
+                        showToast("Ultimo Caractere Inexistente!");
+                        return;
+                    }
+                }
+
+                telefoneTraduzido.setText(frase1.toString());
+
             }
         });
 
@@ -158,4 +260,5 @@ public class SMS extends AppCompatActivity {
         });
 
     }
+
 }
