@@ -2,4 +2,5 @@
     <string name="app_name">Projeto1</string>
     <string name="frases_prontas">Frases Prontas</string>
     <string name="enviar_sms">Enviar SMS</string>
+    <string name="pedir_permiss_o">Pedir Permissão</string>
 </resources>
