@@ -34,6 +34,9 @@ public class SMS extends AppCompatActivity {
         TextView mensagemMorse = findViewById(R.id.mensagem_em_morse);
         TextView telefoneMorse = findViewById(R.id.telefone_em_morse);
 
+        TextView LegMorseMen = findViewById(R.id.mensagem_morse);
+        TextView LegMorseTel = findViewById(R.id.telefone_morse);
+
 
         TextView telefoneTraduzido = findViewById(R.id.telefone_que_foi_traduzido);
         TextView mensagemTraduzida = findViewById(R.id.mensagem_que_foi_traduzida);
@@ -50,6 +53,8 @@ public class SMS extends AppCompatActivity {
         telefoneMorse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                LegMorseTel.setTextColor(Color.parseColor("#6200ee"));
+                LegMorseMen.setTextColor(Color.parseColor("#aaaaaa"));
                 buttonMorse.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -105,6 +110,8 @@ public class SMS extends AppCompatActivity {
         mensagemMorse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                LegMorseMen.setTextColor(Color.parseColor("#6200ee"));
+                LegMorseTel.setTextColor(Color.parseColor("#aaaaaa"));
                 buttonMorse.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
