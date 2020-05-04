@@ -20,6 +20,5 @@ public class DicionarioMorse extends AppCompatActivity {
                 TextView alguma = findViewById(R.id.sera);
             }
         }
-
 }
 
