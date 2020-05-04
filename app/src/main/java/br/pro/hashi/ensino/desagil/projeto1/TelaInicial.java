@@ -2,6 +2,7 @@ package br.pro.hashi.ensino.desagil.projeto1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,12 +29,22 @@ public class TelaInicial extends AppCompatActivity {
         TextView textoMorse = findViewById(R.id.texto_morse);
         TextView textoTraduzido = findViewById(R.id.texto_traduzido);
 
+        Button buttonDicMorse = findViewById(R.id.button_dicmorse_char);
+        Intent dicMorse = new Intent(this, DicionarioMorse.class);
+
         Button buttonTraduzir = findViewById(R.id.button_traduzir);
 
         Button buttonMorse = findViewById(R.id.button_morse);
         Button buttonEspaco = findViewById(R.id.button_espaco);
         Button buttonBarra = findViewById(R.id.button_barra);
         Button buttonApaga = findViewById(R.id.button_apagar);
+
+        buttonDicMorse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { startActivity(dicMorse);
+
+            }
+        });
 
         buttonMorse.setOnClickListener(new View.OnClickListener() {
             @Override

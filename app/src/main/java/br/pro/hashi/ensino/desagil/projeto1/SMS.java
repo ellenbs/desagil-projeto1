@@ -3,6 +3,7 @@ package br.pro.hashi.ensino.desagil.projeto1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.telephony.PhoneNumberUtils;
@@ -41,6 +42,9 @@ public class SMS extends AppCompatActivity {
         TextView telefoneTraduzido = findViewById(R.id.telefone_que_foi_traduzido);
         TextView mensagemTraduzida = findViewById(R.id.mensagem_que_foi_traduzida);
 
+        Button buttonDicMorse = findViewById(R.id.button_dicmorse_char);
+        Intent dicMorse = new Intent(this, DicionarioMorse.class);
+
         Button buttonMorse = findViewById(R.id.button_morse);
         Button buttonEspaco = findViewById(R.id.button_espaco);
         Button buttonBarra = findViewById(R.id.button_barra);
@@ -49,6 +53,13 @@ public class SMS extends AppCompatActivity {
         Button buttonTraduzir = findViewById(R.id.button_traduzir);
 
         Button buttonEnviar = findViewById(R.id.button_enviar);
+
+        buttonDicMorse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { startActivity(dicMorse);
+
+            }
+        });
 
         telefoneMorse.setOnClickListener(new View.OnClickListener() {
             @Override
