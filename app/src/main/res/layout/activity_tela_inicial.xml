@@ -52,7 +52,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:padding="10dp"
-            android:hint="Texto em alfabetico romano"
+            android:textSize="20dp"
+            android:hint="Texto em alfabeto romano"
             app:layout_constraintTop_toBottomOf="@id/texto_traduzido_abaixo" />
 
         <TextView
@@ -60,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="230dp"
             android:text="Digite abaixo o texto em morse: "
             android:textSize="20dp"
             app:layout_constraintTop_toBottomOf="@id/texto_traduzido" />
@@ -71,6 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:hint="Texto em morse"
+            android:textSize="20dp"
             android:padding="10dp"
             app:layout_constraintTop_toBottomOf="@id/digite" />
 
