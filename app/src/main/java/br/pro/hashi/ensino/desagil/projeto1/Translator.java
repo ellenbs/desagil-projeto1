@@ -262,7 +262,6 @@ public class Translator {
             Node left = node.getLeft();
             Node right = node.getRight();
 
-
             if (left != null) {
                 queue.add(left);
             }
@@ -270,7 +269,6 @@ public class Translator {
                 queue.add(right);
             }
             queue.remove();
-
         }
         return morses;
     }

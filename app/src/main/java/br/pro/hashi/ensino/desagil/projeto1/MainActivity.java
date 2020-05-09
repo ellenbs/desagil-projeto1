@@ -14,20 +14,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button buttonTelaTraduz = findViewById(R.id.button_telatraduz);
         Button buttonDicMorse = findViewById(R.id.button_dicmorse_char);
+        Button buttonDicAlfa = findViewById(R.id.button_dicchar_morse);
+        Button buttonTelaTraduz = findViewById(R.id.button_telatraduz);
         Button buttonSMS = findViewById(R.id.button_sms);
         Button buttonFrases = findViewById(R.id.button_frases);
 
-        Intent traduz = new Intent(this, TelaInicial.class);
-
         Intent dicMorse = new Intent(this, DicionarioMorse.class);
+
+        Intent dicAlfa = new Intent(this, DicionarioAlfabeto.class);
+
+        Intent traduz = new Intent(this, TelaInicial.class);
 
         Intent sms = new Intent(this, Permissao.class);
 
         Intent frase = new Intent(this, Frases.class);
-
-
 
 
         buttonTelaTraduz.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +55,13 @@ public class MainActivity extends AppCompatActivity {
         buttonFrases.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) { startActivity(frase);
+
+            }
+        });
+
+        buttonDicAlfa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { startActivity(dicAlfa);
 
             }
         });
