@@ -5,7 +5,6 @@
 
 package br.pro.hashi.ensino.desagil.projeto1;
 
-import java.io.LineNumberReader;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -148,41 +147,40 @@ public class Translator {
         no9.setParent(noVazio3);
         no0.setParent(noVazio3);
 
-        this.map.put('S', root);
-        this.map.put('e', noe);
-        this.map.put('t', not);
-
-        this.map.put('i', noi);
         this.map.put('a', noa);
-        this.map.put('n', non);
-        this.map.put('m', nom);
-
-        this.map.put('s', nos);
-        this.map.put('u', nou);
-        this.map.put('r', nor);
-        this.map.put('w', now);
-        this.map.put('d', nod);
-        this.map.put('k', nok);
-        this.map.put('g', nog);
-        this.map.put('o', noo);
-
-        this.map.put('h', noh);
-        this.map.put('v', nov);
-        this.map.put('f', nof);
-        this.map.put('l', nol);
-        this.map.put('A', noVazio1);
-
-        this.map.put('p', nop);
-        this.map.put('j', noj);
         this.map.put('b', nob);
-        this.map.put('x', nox);
         this.map.put('c', noc);
+        this.map.put('d', nod);
+        this.map.put('e', noe);
+        this.map.put('f', nof);
+        this.map.put('g', nog);
+        this.map.put('h', noh);
+        this.map.put('i', noi);
+        this.map.put('j', noj);
+        this.map.put('k', nok);
+        this.map.put('l', nol);
+        this.map.put('m', nom);
+        this.map.put('n', non);
+        this.map.put('o', noo);
+        this.map.put('p', nop);
+        this.map.put('q', noq);
+
+        this.map.put('r', nor);
+        this.map.put('s', nos);
+        this.map.put('t', not);
+        this.map.put('u', nou);
+        this.map.put('v', nov);
+        this.map.put('w', now);
+        this.map.put('x', nox);
         this.map.put('y', noy);
         this.map.put('z', noz);
-        this.map.put('q', noq);
+
+        this.map.put('S', root);
+        this.map.put('A', noVazio1);
         this.map.put('B', noVazio2);
         this.map.put('C', noVazio3);
 
+        this.map.put('0', no0);
         this.map.put('1', no1);
         this.map.put('2', no2);
         this.map.put('3', no3);
@@ -192,7 +190,7 @@ public class Translator {
         this.map.put('7', no7);
         this.map.put('8', no8);
         this.map.put('9', no9);
-        this.map.put('0', no0);
+
     }
 
     // Você deve mudar o recheio deste método,
@@ -271,5 +269,9 @@ public class Translator {
             queue.remove();
         }
         return morses;
+    }
+
+    public HashMap<Character, Node> getMap() {
+        return map;
     }
 }

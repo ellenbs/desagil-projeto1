@@ -27,8 +27,6 @@ public class DicionarioMorse extends AppCompatActivity {
             lista_alfabeto.add(t);
         }
 
-
-
         for (int i = 0; i < (lista_codigo.size()); i++){
             TableLayout tableLayout =  (TableLayout) findViewById(R.id.tablelayout);
             TableRow tablerow = new TableRow(this);
@@ -43,12 +41,7 @@ public class DicionarioMorse extends AppCompatActivity {
             textViewDois.setText(lista_alfabeto.get(i).toString());
             tablerow.addView(textViewDois);
             tableLayout.addView(tablerow);
-
         }
-
-        
-
-
     }
 
 }

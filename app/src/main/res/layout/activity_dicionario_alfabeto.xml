@@ -23,7 +23,6 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints" />
 
-
         <TableLayout
             android:id="@+id/tablelayout"
             app:layout_constraintTop_toBottomOf="@id/titulo"
@@ -34,7 +33,5 @@
         </TableLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 </ScrollView>
