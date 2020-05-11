@@ -26,13 +26,30 @@ public class DicionarioAlfabeto extends AppCompatActivity {
 
         LinkedList<Character> lista_inicial = new LinkedList<>(mapa.keySet());
         Collections.sort(lista_inicial);
+        LinkedList<Character>lista_numeros = new LinkedList<>();
+
+        for (int n = 0; n < 10; n++){
+            char numero = lista_inicial.get(n);
+            lista_numeros.add(numero);
+        }
+
+        System.out.println(lista_numeros);
 
         LinkedList lista_alfabeto = new LinkedList();
         for (int a = 0; a < (lista_inicial.size()); a++ ){
-            if (lista_inicial.get(a) != 'S' && lista_inicial.get(a) != 'A' && lista_inicial.get(a) != 'B' && lista_inicial.get(a) != 'C'){
+
+            if (lista_inicial.get(a) != 'S' && lista_inicial.get(a) != 'A' && lista_inicial.get(a) != 'B' && lista_inicial.get(a) != 'C'&& !lista_numeros.contains(lista_inicial.get(a))){
                 lista_alfabeto.add(lista_inicial.get(a));
             }
         }
+
+        System.out.println(lista_alfabeto);
+
+        for (char inteiro: lista_numeros){
+            lista_alfabeto.add(inteiro);
+        }
+
+        System.out.println(lista_alfabeto);
 
         LinkedList<String> lista_morse = new LinkedList<>();
         for (Object letra: lista_alfabeto){
@@ -59,5 +76,9 @@ public class DicionarioAlfabeto extends AppCompatActivity {
             tablerow.addView(textViewDois);
             tableLayout.addView(tablerow);
         }
+
+
+
+
     }
 }
